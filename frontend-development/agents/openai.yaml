@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Development"
+  short_description: "前端页面与组件开发规范"
+  default_prompt: "使用 $frontend-development 开发或重构前端页面和组件。先识别当前项目技术栈、组件库和样式方案；开发时遵循基础响应式、局部 loading、HTML/CSS/JS 职责分离、表格分页和项目既有约定。"

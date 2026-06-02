@@ -1,0 +1,59 @@
+{
+  "normalization": {
+    "remove_pattern": "[\\s_（）()\\[\\]【】%％]",
+    "stop_words": ["平均", "比例", "占比", "总", "小区", "网页", "视频", "语音", "ALL"]
+  },
+  "semantic_families": [
+    {
+      "name": "时延",
+      "keywords": ["时延", "延迟", "RTT"]
+    },
+    {
+      "name": "成功率",
+      "keywords": ["成功率", "接通率", "响应成功率", "建立成功率", "优良率"]
+    },
+    {
+      "name": "掉线掉话",
+      "keywords": ["掉线率", "掉话率", "异常释放", "UE上下文"]
+    },
+    {
+      "name": "丢包弃包重传",
+      "keywords": ["丢包率", "弃包率", "重传率", "重传报文占比"]
+    },
+    {
+      "name": "利用率占用率",
+      "keywords": ["利用率", "占用率", "信道占用率", "PRB"]
+    },
+    {
+      "name": "流量",
+      "keywords": ["流量", "GB", "MB"]
+    },
+    {
+      "name": "速率吞吐",
+      "keywords": ["速率", "吞吐率"]
+    },
+    {
+      "name": "覆盖",
+      "keywords": ["覆盖率", "弱覆盖", "RSRP", "SINR", "MR"]
+    },
+    {
+      "name": "干扰",
+      "keywords": ["干扰", "噪声", "MOD3"]
+    },
+    {
+      "name": "重建",
+      "keywords": ["重建比例", "重建成功率"]
+    }
+  ],
+  "scoring": {
+    "candidate_threshold": 35.0,
+    "name_similarity_points": 55.0,
+    "normalized_exact_points": 90.0,
+    "semantic_family_points": 30.0,
+    "field_points": {
+      "net_type": 8.0,
+      "kpi_dim": 8.0,
+      "kpi_type": 6.0
+    }
+  }
+}

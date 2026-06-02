@@ -1,0 +1,4 @@
+interface:
+  display_name: "日报转月报"
+  short_description: "按项目聚合日报并生成月报与天数汇总"
+  default_prompt: "Use $daily-to-monthly-report to 将我提供的日报明细按项目汇总为月报，并输出天数汇总。"

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Excel 数据字典转 Markdown"
+  short_description: "将 Excel 数据字典解析为表级 Markdown 文档。"
+  default_prompt: "Use $excel-data-dictionary-to-md to convert this Excel data dictionary into one Markdown file per table plus a README overview."
+
+policy:
+  allow_implicit_invocation: true

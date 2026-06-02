@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legend Config Copy"
+  short_description: "Generate GIS legend configuration SQL from a KPI list and source module."
+  default_prompt: "Provide the source module, target module, network type, KPI dimension, database config source, and KPI list. I will prepare matches and generate reviewable legend configuration SQL."

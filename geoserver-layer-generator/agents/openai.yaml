@@ -1,0 +1,4 @@
+interface:
+  display_name: "GeoServer 图层生成器"
+  short_description: "生成 GeoServer SQL 与 SLD 图层文件"
+  default_prompt: "根据这段查询 SQL 制作 GeoServer 图层 SQL 与 SLD 样式。"

@@ -1,0 +1,13 @@
+SELECT
+    <stable_id_expr> AS gid,
+    <business_columns>,
+    <epsg4326_geometry_expr> AS geom
+FROM <source_table> a
+<optional_joins>
+WHERE 1 = 1
+  AND ('%city%' = '' OR a.city = '%city%')
+  AND ('%area%' = '' OR a.area = '%area%')
+  AND ('%name%' = '' OR a.name LIKE concat('%%', '%name%', '%%'))
+  <optional_geometry_validity_filter>
+<optional_group_by>
+<optional_order_by>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0"
+  xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd"
+  xmlns="http://www.opengis.net/sld"
+  xmlns:ogc="http://www.opengis.net/ogc"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <Name><style_name></Name>
+    <UserStyle>
+      <Title><style_name></Title>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name><rule_name></Name>
+          <Title><rule_title></Title>
+          <!-- 将下面的 Symbolizer 替换为与几何类型匹配的版本。 -->
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill"><stroke_color></CssParameter>
+              <CssParameter name="fill-opacity">0</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke"><stroke_color></CssParameter>
+              <CssParameter name="stroke-width">2</CssParameter>
+              <CssParameter name="stroke-linejoin">round</CssParameter>
+              <CssParameter name="stroke-linecap">round</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
