@@ -1,37 +1,35 @@
 ---
 name: find-docs
 description: >-
-  Retrieve up-to-date documentation, API references, and code examples for developer
-  technologies with the Context7 CLI. Use whenever the user asks about a specific
-  library, framework, SDK, CLI tool, cloud service, API syntax, configuration option,
-  version migration, setup instruction, library-specific debugging issue, or "how do I"
-  question involving a named technology such as React, Next.js, Prisma, Express,
-  Tailwind, Django, Spring Boot, or similar tools. Always verify current API details
-  with Context7 instead of relying on training data unless Context7 is unavailable.
+  使用 Context7 CLI 检索开发技术的最新文档、API 参考和代码示例。当用户询问特定库、
+  框架、SDK、CLI 工具、云服务、API 语法、配置选项、版本迁移、安装说明、特定库调试问题，
+  或涉及 React、Next.js、Prisma、Express、Tailwind、Django、Spring Boot 等具名技术的
+  “如何做”问题时使用。除非 Context7 不可用，否则必须使用 Context7 验证当前 API 细节，
+  不要只依赖训练数据。
 ---
 
-# Find Docs
+# 查找文档
 
-Use Context7 to retrieve current documentation and examples for developer technologies. Prefer current docs over memory for API details, signatures, configuration, migrations, setup, and CLI usage.
+使用 Context7 检索开发技术的最新文档和示例。对于 API 细节、函数签名、配置、迁移、安装和 CLI 用法，优先使用当前文档，而不是记忆。
 
-## Workflow
+## 工作流
 
-1. Identify the library, framework, SDK, CLI tool, or cloud service in the user's request.
-2. Remove sensitive or confidential details from the query, including API keys, passwords, credentials, personal data, and proprietary code.
-3. Resolve the library ID first:
+1. 识别用户请求中的库、框架、SDK、CLI 工具或云服务。
+2. 从查询中移除敏感或机密信息，包括 API key、密码、凭据、个人数据和专有代码。
+3. 先解析库 ID：
 
 ```bash
 npx ctx7@latest library <name> "<specific query>"
 ```
 
-4. Select the best Context7 library ID from the results.
-5. Query the documentation with the selected ID:
+4. 从结果中选择最合适的 Context7 库 ID。
+5. 使用选定的 ID 查询文档：
 
 ```bash
 npx ctx7@latest docs /org/project "<specific query>"
 ```
 
-Use an installed `ctx7` binary only when it is already available or after updating it:
+只有在已安装 `ctx7`，或已经更新后，才使用本地安装的 `ctx7` 二进制文件：
 
 ```bash
 npm install -g ctx7@latest
@@ -39,53 +37,53 @@ ctx7 library <name> "<specific query>"
 ctx7 docs /org/project "<specific query>"
 ```
 
-## Required Lookup Rules
+## 必要查询规则
 
-- Always call `ctx7 library` before `ctx7 docs`, unless the user explicitly provides a Context7 library ID in `/org/project` or `/org/project/version` format.
-- Always pass a descriptive query argument to `ctx7 library`; use the user's intent to disambiguate similarly named packages.
-- Do not run Context7 commands more than 3 times for one user question. If the answer is still incomplete after 3 attempts, use the best result available and state the limitation.
-- Prefer `npx ctx7@latest` when the CLI is not known to be installed, because it avoids relying on a stale global installation.
-- Do not include sensitive information in Context7 queries.
+- 始终先调用 `ctx7 library`，再调用 `ctx7 docs`，除非用户明确提供 `/org/project` 或 `/org/project/version` 格式的 Context7 库 ID。
+- 始终向 `ctx7 library` 传入描述性查询参数；使用用户意图区分名称相近的包。
+- 针对同一个用户问题，Context7 命令最多运行 3 次。如果 3 次后答案仍不完整，使用已有最佳结果，并说明限制。
+- 当不确定 CLI 是否已安装时，优先使用 `npx ctx7@latest`，避免依赖过期的全局安装。
+- 不要在 Context7 查询中包含敏感信息。
 
-## Selecting a Library ID
+## 选择库 ID
 
-Choose the most relevant match using these signals, in order:
+按以下信号选择最相关的匹配项，优先级从高到低：
 
-1. Exact or close name match to the requested technology.
-2. Description relevance to the user's task.
-3. Higher code snippet coverage.
-4. High or Medium source reputation.
-5. Higher benchmark score.
+1. 与用户请求技术的名称完全匹配或接近匹配。
+2. 描述与用户任务的相关性。
+3. 更高的代码片段覆盖量。
+4. High 或 Medium 来源声誉。
+5. 更高的基准评分。
 
-If multiple strong matches exist, briefly note the ambiguity and proceed with the best match. If no reasonable match exists, state that Context7 did not return a good match and ask for a more specific package, vendor, or library ID.
+如果存在多个强匹配项，简要说明歧义，并使用最佳匹配继续。如果没有合理匹配项，说明 Context7 没有返回合适结果，并请用户提供更具体的包名、供应商或库 ID。
 
-## Version Handling
+## 版本处理
 
-If the user requests a specific version, use a version-specific ID from the `ctx7 library` output when available:
+如果用户请求特定版本，并且 `ctx7 library` 输出中存在版本专属 ID，则使用该 ID：
 
 ```bash
 npx ctx7@latest docs /org/project/version "<specific query>"
 ```
 
-If the exact version is unavailable, use the closest listed version and state the choice. If no suitable version is listed, use the latest indexed ID and state that version-specific docs were not available.
+如果没有精确版本，使用列出的最接近版本，并说明选择。如果没有合适版本，使用最新索引 ID，并说明没有可用的版本专属文档。
 
-## Query Quality
+## 查询质量
 
-Use the user's full question when possible. Prefer specific queries such as:
+尽可能使用用户的完整问题。优先使用具体查询，例如：
 
 ```bash
 npx ctx7@latest library react "React useEffect cleanup function with async operations"
 npx ctx7@latest docs /facebook/react "React useEffect cleanup function with async operations"
 ```
 
-Avoid vague one-word queries such as `auth`, `hooks`, or `config`.
+避免 `auth`、`hooks` 或 `config` 等模糊的单词查询。
 
-## Error Handling
+## 错误处理
 
-If Context7 fails because of quota errors such as `Monthly quota reached` or `quota exceeded`:
+如果 Context7 因 `Monthly quota reached` 或 `quota exceeded` 等配额错误失败：
 
-1. Tell the user their Context7 quota is exhausted.
-2. Suggest `ctx7 login` for higher limits.
-3. If they cannot authenticate, answer from general knowledge only after clearly stating that current docs were not available and the answer may be outdated.
+1. 告诉用户他们的 Context7 配额已耗尽。
+2. 建议使用 `ctx7 login` 获得更高额度。
+3. 如果用户无法认证，必须先明确说明当前文档不可用、答案可能过时，然后才能基于通用知识回答。
 
-If Context7 fails for network or installation reasons, report the failure, then answer only if useful and clearly mark that the answer was not verified against current docs.
+如果 Context7 因网络或安装原因失败，报告失败原因；仅在有帮助时继续回答，并明确标注该答案未经过当前文档验证。

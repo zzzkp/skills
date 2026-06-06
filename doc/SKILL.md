@@ -1,43 +1,42 @@
 ---
 name: "doc"
-description: "Use when the task involves reading, creating, or editing `.docx` documents, especially when formatting or layout fidelity matters; prefer `python-docx` plus the bundled `scripts/render_docx.py` for visual checks."
+description: "当任务涉及读取、创建或编辑 `.docx` 文档时使用，尤其是需要格式或布局保真时；优先使用 `python-docx`，并结合内置的 `scripts/render_docx.py` 做可视化检查。"
 ---
 
+# DOCX 技能
 
-# DOCX Skill
+## 适用场景
+- 读取或审阅需要关注布局的 DOCX 内容，例如表格、图示和分页。
+- 创建或编辑具有专业格式的 DOCX 文件。
+- 交付前验证可视化布局。
 
-## When to use
-- Read or review DOCX content where layout matters (tables, diagrams, pagination).
-- Create or edit DOCX files with professional formatting.
-- Validate visual layout before delivery.
+## 工作流
+1. 优先进行可视化审阅，包括布局、表格和图示。
+   - 如果 `soffice` 和 `pdftoppm` 可用，将 DOCX 转为 PDF，再转为 PNG。
+   - 或使用 `scripts/render_docx.py`，该脚本需要 `pdf2image` 和 Poppler。
+   - 如果缺少这些工具，安装它们，或请用户在本地审阅渲染后的页面。
+2. 使用 `python-docx` 进行编辑和结构化创建，例如标题、样式、表格和列表。
+3. 每次有实质性修改后，重新渲染并检查页面。
+4. 如果无法进行可视化审阅，使用 `python-docx` 提取文本作为备用方式，并明确说明布局风险。
+5. 保持中间输出有序，并在最终确认后清理。
 
-## Workflow
-1. Prefer visual review (layout, tables, diagrams).
-   - If `soffice` and `pdftoppm` are available, convert DOCX -> PDF -> PNGs.
-   - Or use `scripts/render_docx.py` (requires `pdf2image` and Poppler).
-   - If these tools are missing, install them or ask the user to review rendered pages locally.
-2. Use `python-docx` for edits and structured creation (headings, styles, tables, lists).
-3. After each meaningful change, re-render and inspect the pages.
-4. If visual review is not possible, extract text with `python-docx` as a fallback and call out layout risk.
-5. Keep intermediate outputs organized and clean up after final approval.
+## 临时目录与输出约定
+- 使用 `tmp/docs/` 存放中间文件；完成后删除。
+- 在本仓库内工作时，将最终产物写入 `output/doc/`。
+- 文件名保持稳定且具备描述性。
 
-## Temp and output conventions
-- Use `tmp/docs/` for intermediate files; delete when done.
-- Write final artifacts under `output/doc/` when working in this repo.
-- Keep filenames stable and descriptive.
+## 依赖项（缺失时安装）
+优先使用 `uv` 管理依赖。
 
-## Dependencies (install if missing)
-Prefer `uv` for dependency management.
-
-Python packages:
+Python 包：
 ```
 uv pip install python-docx pdf2image
 ```
-If `uv` is unavailable:
+如果 `uv` 不可用：
 ```
 python3 -m pip install python-docx pdf2image
 ```
-System tools (for rendering):
+用于渲染的系统工具：
 ```
 # macOS (Homebrew)
 brew install libreoffice poppler
@@ -46,35 +45,35 @@ brew install libreoffice poppler
 sudo apt-get install -y libreoffice poppler-utils
 ```
 
-If installation isn't possible in this environment, tell the user which dependency is missing and how to install it locally.
+如果当前环境无法安装，告诉用户缺少哪个依赖，以及如何在本地安装。
 
-## Environment
-No required environment variables.
+## 环境
+不需要环境变量。
 
-## Rendering commands
-DOCX -> PDF:
+## 渲染命令
+DOCX 转 PDF：
 ```
 soffice -env:UserInstallation=file:///tmp/lo_profile_$$ --headless --convert-to pdf --outdir $OUTDIR $INPUT_DOCX
 ```
 
-PDF -> PNGs:
+PDF 转 PNG：
 ```
 pdftoppm -png $OUTDIR/$BASENAME.pdf $OUTDIR/$BASENAME
 ```
 
-Bundled helper:
+内置辅助脚本：
 ```
 python3 scripts/render_docx.py /path/to/file.docx --output_dir /tmp/docx_pages
 ```
 
-## Quality expectations
-- Deliver a client-ready document: consistent typography, spacing, margins, and clear hierarchy.
-- Avoid formatting defects: clipped/overlapping text, broken tables, unreadable characters, or default-template styling.
-- Charts, tables, and visuals must be legible in rendered pages with correct alignment.
-- Use ASCII hyphens only. Avoid U+2011 (non-breaking hyphen) and other Unicode dashes.
-- Citations and references must be human-readable; never leave tool tokens or placeholder strings.
+## 质量要求
+- 交付可直接面向客户的文档：排版、间距、页边距保持一致，层级清晰。
+- 避免格式缺陷：文本裁切或重叠、表格破损、字符不可读、默认模板样式明显残留。
+- 图表、表格和视觉元素必须在渲染页面中清晰可读，并且对齐正确。
+- 仅使用 ASCII 连字符。避免使用 U+2011（不换行连字符）和其他 Unicode 破折号。
+- 引文和参考文献必须便于人工阅读；不得留下工具令牌或占位字符串。
 
-## Final checks
-- Re-render and inspect every page at 100% zoom before final delivery.
-- Fix any spacing, alignment, or pagination issues and repeat the render loop.
-- Confirm there are no leftovers (temp files, duplicate renders) unless the user asks to keep them.
+## 最终检查
+- 最终交付前重新渲染，并以 100% 缩放检查每一页。
+- 修复所有间距、对齐或分页问题，并重复渲染检查流程。
+- 确认没有遗留文件，例如临时文件或重复渲染文件，除非用户要求保留。
