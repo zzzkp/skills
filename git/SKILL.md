@@ -18,15 +18,15 @@ description: Git 提交工作流指南。用于用户要求提交代码、创建
 
 ## Commit Message 编写
 
-编写 commit message 时，优先使用当前会话上下文中的信息，包括用户请求、已完成的修改、已说明的实现结果和已观察到的验证情况。只有在没有当前会话上下文，或上下文不足以判断提交意图时，才使用 `git diff` / `git diff --staged` 补充分析 message。
+编写 commit message 时，summary 和 body 必须使用中文。优先使用当前会话上下文中的信息，包括用户请求、已完成的修改、已说明的实现结果和已观察到的验证情况。只有在没有当前会话上下文，或上下文不足以判断提交意图时，才使用 `git diff` / `git diff --staged` 补充分析 message。
 
 优先使用简洁的 subject：
 
 ```text
-<type>(<scope>): <summary>
+<type>(<scope>): <中文摘要>
 ```
 
-只有在 scope 能提供有效上下文时才使用。
+`type` 和可选 `scope` 使用英文，summary 使用中文。只有在 scope 能提供有效上下文时才使用，例如 `docs(git): 更新提交信息规范`。
 
 常见 type：
 
@@ -40,10 +40,10 @@ description: Git 提交工作流指南。用于用户要求提交代码、创建
 
 Subject 规则：
 
-- 使用祈使语气：写 `fix login redirect`，不要写 `fixed login redirect`。
+- summary 使用中文动宾短语：写 `修复登录重定向`，不要写 `更新代码`。
 - 尽量控制在 72 个字符以内。
 - 末尾不要加句号。
-- 说明具体结果：写 `fix monthly report date filter`，不要写 `update code`。
+- 说明具体结果：写 `修复月报日期筛选`，不要写 `更新代码`。
 - 无需与仓库近期提交风格保持一致
 
 只有当 subject 无法充分说明变更时才添加 body。body 用于说明变更原因、重要取舍、迁移注意事项或风险。正文每行尽量控制在 72 个字符左右。
@@ -51,11 +51,11 @@ Subject 规则：
 示例：
 
 ```text
-feat(report): add monthly export action
-fix(auth): preserve redirect after session refresh
-refactor(import): split workbook parsing from validation
-docs: update deployment variables
-chore: refresh generated config
+feat(report): 新增月度导出操作
+fix(auth): 保留会话刷新后的跳转地址
+refactor(import): 拆分工作簿解析与校验逻辑
+docs(deploy): 更新部署变量说明
+chore(config): 刷新生成配置
 ```
 
 ## 安全规则
