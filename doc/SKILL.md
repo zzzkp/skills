@@ -1,6 +1,9 @@
 ---
-name: "doc"
-description: "当任务涉及读取、创建或编辑 `.docx` 文档时使用，尤其是需要格式或布局保真时；优先使用 `python-docx`，并结合内置的 `scripts/render_docx.py` 做可视化检查。"
+name: doc
+description: >
+  DOCX 和 Word 文档处理，读取、创建、编辑、审阅 .docx 文档并尽量保留格式和布局。
+  当用户要求读取 Word、修改 Word、创建 DOCX、审阅文档、处理 Word 表格或检查文档排版时使用。
+  触发关键词：DOCX、Word、.docx、读取 Word、修改 Word、创建 Word、编辑文档、文档审阅、表格、页眉页脚、分页、格式保留、布局检查、python-docx、可视化检查、专业文档排版。
 ---
 
 # DOCX 技能

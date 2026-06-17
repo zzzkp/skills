@@ -1,6 +1,9 @@
 ---
 name: excel2md
-description: 将 Excel 工作簿转换为 Markdown 文档。适用于需要把任意 .xlsx、.xlsm、.xltx 或 .xltm 文件按 Sheet 导出为 Markdown 表格、生成工作簿总览 README、保留合并单元格文本、处理中文表格或普通清单配置表的场景。
+description: >
+  Excel 转 Markdown 与工作簿导出，将 .xlsx / .xlsm 工作簿按 Sheet 转为 Markdown 表格。
+  当用户要求把 Excel、工作簿、配置表、清单表或数据字典转换为 Markdown、README 或按 Sheet 导出时使用。
+  触发关键词：Excel 转 Markdown、xlsx、xlsm、工作簿、Sheet、表格导出、Markdown 表格、README、合并单元格、中文表格、配置表、数据字典、清单整理。
 ---
 
 # Excel 转 Markdown

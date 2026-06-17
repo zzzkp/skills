@@ -1,6 +1,9 @@
 ---
 name: geoserver-layer-generator
-description: 根据用户提供的查询 SQL 和图层说明，生成或改写 GeoServer SQL 图层查询与 SLD 样式文件。当用户给出一段业务查询 SQL，并要求制作 GeoServer 图层、GIS 图层 SQL、PostGIS 几何查询、SLD XML 样式、WMS/WFS 地图图层、点线面地图样式或 SQL 加样式文件时使用。
+description: >
+  GeoServer 图层、SQL 与 SLD 样式生成器，根据业务查询 SQL 制作地图图层查询和样式文件。
+  当用户要求生成或改写 GeoServer 图层、PostGIS 几何查询、SQL 图层、WMS/WFS 地图服务或点线面样式时使用。
+  触发关键词：GeoServer、SQL 图层、地图图层 SQL、SLD、SLD XML、PostGIS、geometry、geom、GeoJSON、WMS、WFS、点样式、线样式、面样式、图层配置、SQL 加样式文件。
 ---
 
 # GeoServer 图层生成器

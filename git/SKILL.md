@@ -1,6 +1,9 @@
 ---
 name: git
-description: Git 提交工作流指南。用于用户要求提交代码、创建 git commit、提交变更、编写 commit message、修改提交，或在提交前检查 staged 和 unstaged 变更的场景。
+description: >
+  Git 提交工作流与提交前检查，用于整理仓库变更并创建规范 commit。
+  当用户要求提交代码、创建 git commit、编写 commit message、检查暂存区、查看仓库状态或准备 push 时使用。
+  触发关键词：git、commit、git commit、commit message、提交代码、提交说明、git status、staged、unstaged、untracked、暂存、暂存区、push、提交前检查、仓库变更整理。
 ---
 
 # Git

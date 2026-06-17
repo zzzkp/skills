@@ -1,6 +1,9 @@
 ---
 name: copy-legend-config
-description: 为 cfg_gis_kpi 和 cfg_gis_kpi_color 生成 Greenplum 兼容的 GIS 图例配置复制 SQL。适用于用户要从源模块（如统一GIS）复制指标图例/颜色配置到目标模块、提供 KPI 中文名或字段名、需要 AI 智能匹配未命中指标，或只想生成可审查 SQL 而不执行 SQL 的场景。
+description: >
+  GIS 图例配置复制与迁移，生成 Greenplum 兼容的 GIS 图例配置 SQL 或 CSV。
+  当用户要求复制、迁移、导入、导出或审查 GIS 图例配置、指标颜色配置、源模块到目标模块配置时使用。
+  触发关键词：GIS 图例、图例配置、颜色配置、指标颜色、统一GIS、KPI 列表、源模块、目标模块、cfg_gis_kpi、cfg_gis_kpi_color、Greenplum、生成 SQL、导出 CSV、未命中指标匹配。
 ---
 
 # 图例配置复制

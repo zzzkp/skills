@@ -1,6 +1,9 @@
 ---
 name: java-backend-development
-description: Java 后端接口开发与重构规范。用于新增或修改 Spring Boot 等 Java 后端项目中的 Controller、Service、Repository/Mapper、实体、枚举、工具类、参数对象、事务、分页、导入导出、权限校验、异常处理、SQL 查询优化和数据库表映射；强调分层清晰、业务边界拆分、实体优先、枚举优先、复用工具方法、接口安全和遵循项目既有约定。
+description: >
+  Java 后端接口开发与重构，用于新增、修改、调试或整理 Java REST API 和业务服务。
+  当用户要求开发 Spring Boot 接口、修改 Controller / Service / Mapper、处理分页事务权限、优化 MyBatis SQL 或重构后端分层代码时使用。
+  触发关键词：Java 后端、Spring Boot、REST API、Controller、Service、Repository、Mapper、MyBatis、MyBatis-Plus、JPA、DTO、VO、实体类、事务、分页查询、导入导出、权限校验、SQL 优化、数据库表映射、枚举抽取、工具类抽取、巨型 Service 重构。
 ---
 
 # Java Backend Development
@@ -24,7 +27,6 @@ description: Java 后端接口开发与重构规范。用于新增或修改 Spri
 5. 若涉及数据库表，先确认或补齐实体/领域对象，再改 Service 或持久层。
 6. 若存在状态、类型、动作、来源等固定值，优先新增或复用枚举。
 7. 若出现重复参数转换、判空、列表解析、数值转换、格式化等逻辑，先查项目已有依赖和公共工具类，例如 Hutool、Apache Commons、Guava、项目 `common-utils` / `common-core`，确无合适实现时再抽模块内工具类。
-8. 完成后用静态搜索核对重复私有工具方法、散落字符串状态、无用持久层方法、遗漏事务边界、分页约定偏差、参数校验缺失、权限/数据权限遗漏和违反项目约定的实现。
 
 ## 核心规范
 

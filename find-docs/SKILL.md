@@ -1,11 +1,9 @@
 ---
 name: find-docs
-description: >-
-  使用 Context7 CLI 检索开发技术的最新文档、API 参考和代码示例。当用户询问特定库、
-  框架、SDK、CLI 工具、云服务、API 语法、配置选项、版本迁移、安装说明、特定库调试问题，
-  或涉及 React、Next.js、Prisma、Express、Tailwind、Django、Spring Boot 等具名技术的
-  “如何做”问题时使用。除非 Context7 不可用，否则必须使用 Context7 验证当前 API 细节，
-  不要只依赖训练数据。
+description: >
+  使用 Context7 检索开发技术的最新文档、API 参考、配置说明和代码示例。
+  当用户要求查询库、框架、SDK、CLI 工具、云服务的当前 API、安装方式、配置项、版本迁移或调试问题时使用。
+  触发关键词：Context7、最新文档、官方文档、API reference、代码示例、配置选项、版本迁移、安装说明、调试问题、React、Next.js、Prisma、Express、Tailwind、Django、Spring Boot、不要凭记忆回答。
 ---
 
 # 查找文档
