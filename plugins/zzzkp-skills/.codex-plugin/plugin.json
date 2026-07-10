@@ -1,0 +1,31 @@
+{
+  "name": "zzzkp-skills",
+  "version": "0.2.0",
+  "description": "面向开发、文档、数据处理与 GIS 工作流的 Codex Skills 合集。",
+  "author": {
+    "name": "zzzkp",
+    "url": "https://github.com/zzzkp"
+  },
+  "homepage": "https://github.com/zzzkp/skills",
+  "repository": "https://github.com/zzzkp/skills",
+  "keywords": [
+    "codex",
+    "skills",
+    "developer-tools",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ZZZKP Skills",
+    "shortDescription": "面向开发、文档、数据处理与 GIS 工作流的 Skills 合集",
+    "longDescription": "提供 Web 与 Java 开发、Git 提交、项目文档、DOCX、Excel、报表、GIS 与 GeoServer 等可复用 Codex 工作流。",
+    "developerName": "zzzkp",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "根据当前任务选择并使用合适的 Skill。",
+      "检查当前项目并选择适用的开发工作流。",
+      "列出这个插件包含的 Skills 及其适用场景。"
+    ]
+  }
+}

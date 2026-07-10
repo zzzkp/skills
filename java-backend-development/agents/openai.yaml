@@ -1,4 +1,0 @@
-interface:
-  display_name: "Java Backend Development"
-  short_description: "Java后端接口开发与重构规范"
-  default_prompt: "使用 $java-backend-development 开发或重构 Java 后端接口。先识别当前项目并读取匹配的 reference；没有匹配 reference 时，只使用通用规则并遵循项目既有约定。"

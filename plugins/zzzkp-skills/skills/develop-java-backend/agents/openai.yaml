@@ -1,0 +1,4 @@
+interface:
+  display_name: "Java 后端开发"
+  short_description: "按项目既有架构开发和重构 Java 后端接口、业务服务及数据访问层"
+  default_prompt: "使用 $develop-java-backend，遵循当前项目的分层和持久层约定开发或重构 Java 后端接口。"

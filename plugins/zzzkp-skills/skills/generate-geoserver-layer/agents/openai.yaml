@@ -1,0 +1,4 @@
+interface:
+  display_name: "GeoServer 图层生成"
+  short_description: "根据业务查询生成 GeoServer SQL 图层和点线面 SLD 样式文件"
+  default_prompt: "使用 $generate-geoserver-layer，根据这段查询 SQL 生成 GeoServer 图层 SQL 和 SLD 样式。"

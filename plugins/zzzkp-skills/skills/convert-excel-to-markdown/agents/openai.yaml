@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excel 转 Markdown"
+  short_description: "将 Excel 工作簿按 Sheet 转换为 Markdown 表格并生成索引总览"
+  default_prompt: "使用 $convert-excel-to-markdown，将这个 Excel 工作簿按 Sheet 转换为 Markdown 并生成索引。"

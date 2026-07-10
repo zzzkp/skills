@@ -1,4 +1,0 @@
-interface:
-  display_name: "Find Docs"
-  short_description: "Retrieve current developer docs"
-  default_prompt: "Use $find-docs to answer this library or API question with current documentation."

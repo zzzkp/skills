@@ -1,0 +1,4 @@
+interface:
+  display_name: "日报转月报"
+  short_description: "按项目归并日报明细并生成月报正文、工时天数和项目统计结果"
+  default_prompt: "使用 $convert-daily-reports-to-monthly-report，将我提供的日报按项目汇总为月报并计算工时天数。"

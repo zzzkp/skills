@@ -1,0 +1,13 @@
+{
+  "name": "zzzkp",
+  "owner": {
+    "name": "zzzkp"
+  },
+  "plugins": [
+    {
+      "name": "zzzkp-skills",
+      "source": "./plugins/zzzkp-skills",
+      "description": "面向开发、文档、数据处理与 GIS 工作流的 Agent Skills 合集。"
+    }
+  ]
+}

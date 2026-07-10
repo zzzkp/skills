@@ -1,0 +1,4 @@
+interface:
+  display_name: "GIS 图例配置复制"
+  short_description: "复制迁移 GIS 图例与指标颜色配置，并生成可审查的 SQL 或 CSV"
+  default_prompt: "使用 $copy-gis-legend-config，根据源模块、目标模块和 KPI 列表生成可审查的 GIS 图例配置 SQL。"

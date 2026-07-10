@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目文档管理"
+  short_description: "维护项目 README、模块文档、专题文档、相对链接及知识库索引结构"
+  default_prompt: "使用 $manage-project-docs，整理这个项目的文档结构、模块索引和专题 Markdown 文档。"

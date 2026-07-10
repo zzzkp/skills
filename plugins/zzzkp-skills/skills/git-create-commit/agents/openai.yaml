@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git 提交"
+  short_description: "检查工作区与暂存区、整理本次变更并创建范围明确的规范 Git 提交"
+  default_prompt: "使用 $git-create-commit，检查本次变更、准备提交信息，并在我明确确认后创建 Git commit。"

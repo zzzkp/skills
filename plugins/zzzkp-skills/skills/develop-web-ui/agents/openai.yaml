@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web 前端开发"
+  short_description: "按项目既有技术栈开发和重构 Web 页面、组件、样式及交互逻辑"
+  default_prompt: "使用 $develop-web-ui，遵循当前项目的技术栈和组件约定开发或重构这个 Web UI。"

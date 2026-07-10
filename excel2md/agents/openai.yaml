@@ -1,7 +1,0 @@
-interface:
-  display_name: "Excel 转 Markdown"
-  short_description: "将任意 Excel 工作簿按 Sheet 转为 Markdown 表格。"
-  default_prompt: "请使用 $excel2md 将这个 Excel 工作簿按 Sheet 转换为 Markdown，并生成 README 总览。"
-
-policy:
-  allow_implicit_invocation: true

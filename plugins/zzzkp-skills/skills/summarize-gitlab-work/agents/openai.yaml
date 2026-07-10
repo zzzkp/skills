@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitLab 工作汇总"
+  short_description: "分析指定周期的 GitLab 提交并按项目与业务模块生成中文工作记录"
+  default_prompt: "使用 $summarize-gitlab-work，分析指定周期内的 GitLab 提交并按项目和业务模块生成工作记录。"
